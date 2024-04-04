@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RecipeSharingAppxml" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+
+
+    </style>
+
+    <style name="Theme.RecipeSharingAppxml" parent="Base.Theme.RecipeSharingAppxml" />
+</resources>

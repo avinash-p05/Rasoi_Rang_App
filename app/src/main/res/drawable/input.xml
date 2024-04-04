@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="@dimen/_12sdp"/> <!-- Adjust the radius to change the roundness of the corners -->
+    <solid android:color="@color/textfield"/> <!-- Color of the background -->
+</shape>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Rasoi Rang</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_prompt">Select the type</string>
+
+    <string-array name="spinner_items">
+        <item>choose here</item>
+        <item>Appetizers</item>
+        <item>Desserts</item>
+        <item>Salads</item>
+        <item>Soups</item>
+        <item>Snacks</item>
+        <item>Beverages</item>
+        <item>Breakfast</item>
+        <item>Veg Main Courses</item>
+        <item>Non Veg Main Courses</item>
+        <item>Sandwiches</item>
+    </string-array>
+
+    <style name="NavigationBarText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="fontFamily">@font/epilogue_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <!-- Add any other style attributes you want to customize -->
+    </style>
+
+
+</resources>

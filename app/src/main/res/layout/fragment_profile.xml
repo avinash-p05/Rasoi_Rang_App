@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".Profile">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ProgressBar
+        android:id="@+id/progressBarP"
+        style="@style/CustomProgressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
+
+    <android.widget.Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:background="@drawable/btn1"
+        android:elevation="@dimen/_16sdp"
+        android:fontFamily="@font/epilogue_bold"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <android.widget.Button
+        android:id="@+id/editBtn"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:background="@drawable/input"
+        android:elevation="@dimen/_16sdp"
+        android:fontFamily="@font/epilogue_bold"
+        android:text="Edit Profile"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/emailP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="Email"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.306" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_bold"
+        android:gravity="center"
+        android:padding="@dimen/_16sdp"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18ssp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/usernameP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_bold"
+
+        android:hint="Username"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_bold"
+        android:gravity="start"
+        android:hint="Your Recipes"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/_18ssp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/circlular"
+        android:scaleType="centerCrop"
+        android:src="@drawable/round_person_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <ImageButton
+        android:id="@+id/settings"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@color/bg"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:focusable="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recipeViewP"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_100sdp"
+        android:paddingBottom="280dp"
+        app:layout_constraintBottom_toTopOf="@+id/bnView"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.04"
+        tools:ignore="UnknownIdInLayout" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="CustomProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@color/main</item>
+    </style>
+
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/bad_script</item>
+        <item>@font/epilogue</item>
+        <item>@font/epilogue_bold</item>
+        <item>@font/epilogue_semibold</item>
+        <item>@font/epilogue_semibold_italic</item>
+    </array>
+</resources>
