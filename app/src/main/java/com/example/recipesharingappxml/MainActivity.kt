@@ -3,7 +3,11 @@ package com.example.recipesharingappxml
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomappbar.BottomAppBar
+import com.example.recipesharingappxml.home.Feed
+import com.example.recipesharingappxml.post.Upload
+import com.example.recipesharingappxml.profile.Profile
+import com.example.recipesharingappxml.saved.Saved
+import com.example.recipesharingappxml.trending.Home
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

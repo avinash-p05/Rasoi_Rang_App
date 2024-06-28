@@ -14,17 +14,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.RecipeSharingAppxml"
         tools:targetApi="31">
         <activity
-            android:name=".Contact"
+            android:name=".profile.Contact"
             android:exported="false" />
         <activity
-            android:name=".RecipeDetails"
+            android:name=".common.RecipeDetails"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".splash"
+            android:name=".auth.splash"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -34,13 +35,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".start"
+            android:name=".auth.start"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".auth.Register"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".auth.Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

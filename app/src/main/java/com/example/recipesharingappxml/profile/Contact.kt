@@ -1,4 +1,4 @@
-package com.example.recipesharingappxml
+package com.example.recipesharingappxml.profile
 
 
 

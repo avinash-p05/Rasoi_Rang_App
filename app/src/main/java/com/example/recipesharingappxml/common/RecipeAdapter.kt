@@ -1,4 +1,4 @@
-package com.example.recipesharingappxml
+package com.example.recipesharingappxml.common
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import java.text.MessageFormat
-import java.util.ArrayList
+import com.example.recipesharingappxml.R
+import com.example.recipesharingappxml.data.RecipeData
 
 class RecipeAdapter(
-    private var recipeList: List<Recipe>,
+    private var recipeList: List<RecipeData>,
     private val context: Context,
     private val onRecipeClickListener: OnRecipeClickListener
 ) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
@@ -60,13 +60,13 @@ class RecipeAdapter(
         return recipeList.size
     }
 
-    fun setRecipeList(recipeList: ArrayList<Recipe>) {
+    fun setRecipeList(recipeList: List<RecipeData>) {
         this.recipeList = recipeList
         notifyDataSetChanged()
     }
 
     interface OnRecipeClickListener {
-        fun onRecipeClick(recipe: Recipe)
+        fun onRecipeClick(recipe: RecipeData)
     }
 }
 

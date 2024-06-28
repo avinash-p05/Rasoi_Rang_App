@@ -1,4 +1,4 @@
-package com.example.recipesharingappxml
+package com.example.recipesharingappxml.profile
 
 
 import android.content.Context
@@ -9,9 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import java.util.ArrayList
+import com.example.recipesharingappxml.R
+import com.example.recipesharingappxml.data.RecipeData
 
-class RecipeOwnAdapter(private var recipeList: List<RecipeOwn>, private val context: Context) :
+class RecipeOwnAdapter(private var recipeList: List<RecipeData>, private val context: Context) :
     RecyclerView.Adapter<RecipeOwnAdapter.RecipeViewHolder>() {
 
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,7 +34,7 @@ class RecipeOwnAdapter(private var recipeList: List<RecipeOwn>, private val cont
         holder.date.text = recipe.date
         // Set recipe image using Glide or Picasso or any other image loading library
         Glide.with(context)
-            .load(recipe.image) // Optional placeholder image // Optional error placeholder image
+            .load(recipe.imageUrl) // Optional placeholder image // Optional error placeholder image
             .into(holder.recipeImage)
     }
 
@@ -41,7 +42,7 @@ class RecipeOwnAdapter(private var recipeList: List<RecipeOwn>, private val cont
         return recipeList.size
     }
 
-    fun setRecipeList(recipeList: ArrayList<RecipeOwn>) {
+    fun setRecipeList(recipeList: List<RecipeData>) {
         this.recipeList = recipeList
         notifyDataSetChanged()
     }

@@ -1,4 +1,4 @@
-package com.example.recipesharingappxml
+package com.example.recipesharingappxml.trending
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,8 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recipesharingappxml.R
+import com.example.recipesharingappxml.common.RecipeTrend
+import com.example.recipesharingappxml.data.RecipeData
 
-class RecipeTrendAdapter(private var recipeList: List<RecipeTrend>, private val context: Context,private val onRecipeClickListener: RecipeTrendAdapter.OnRecipeClickListener) :
+class RecipeTrendAdapter(private var recipeList: List<RecipeData>, private val context: Context, private val onRecipeClickListener: OnRecipeClickListener) :
     RecyclerView.Adapter<RecipeTrendAdapter.RecipeViewHolder>() {
 
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
@@ -43,7 +46,7 @@ class RecipeTrendAdapter(private var recipeList: List<RecipeTrend>, private val 
         val currentItem = recipeList[position]
         holder.titleTextView.text = currentItem.title
         holder.postBy.text = "Posted by - "+currentItem.userName
-        holder.saves.text = currentItem.save+"k+ Saves"
+        holder.saves.text = currentItem.saves.toString()+"k+ Saves"
         Glide.with(context)
             .load(currentItem.imageUrl)
             .centerCrop()
@@ -52,13 +55,13 @@ class RecipeTrendAdapter(private var recipeList: List<RecipeTrend>, private val 
 
     override fun getItemCount() = recipeList.size
 
-    fun setRecipeList(recipes: List<RecipeTrend>) {
+    fun setRecipeList(recipes: List<RecipeData>) {
         recipeList = recipes
         notifyDataSetChanged()
     }
 
     interface OnRecipeClickListener {
-        fun onRecipeClick(recipe: RecipeTrend)
+        fun onRecipeClick(recipe: RecipeData)
     }
 }
 

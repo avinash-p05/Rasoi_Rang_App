@@ -1,7 +1,7 @@
-package com.example.recipesharingappxml
+package com.example.recipesharingappxml.profile
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
@@ -16,12 +16,17 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.core.os.postDelayed
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.LottieAnimationView
+import com.example.recipesharingappxml.R
+import com.example.recipesharingappxml.auth.start
+import com.example.recipesharingappxml.services.RecipesResponse
+import com.example.recipesharingappxml.services.RetrofitClient
 import com.google.firebase.firestore.FirebaseFirestore
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.ArrayList
 
 class Profile : Fragment() {
@@ -55,7 +60,7 @@ class Profile : Fragment() {
         val pref: SharedPreferences = requireActivity().getSharedPreferences("login", MODE_PRIVATE)
         val savedUserName = pref.getString("username", "")
         val savedEmail = pref.getString("email", "")
-        userId = pref.getString("userid","").toString()
+        userId = pref.getString("email","").toString()
         // Display the saved data in TextViews
         userName.text = savedUserName
         email.text = savedEmail
@@ -71,7 +76,7 @@ class Profile : Fragment() {
 
 
         setting.setOnClickListener(View.OnClickListener {
-            val intentStart = Intent(requireContext(),Contact::class.java)
+            val intentStart = Intent(requireContext(), Contact::class.java)
             startActivity(intentStart)
         })
 
@@ -84,7 +89,7 @@ class Profile : Fragment() {
                 editor.putBoolean("flag",false)
                 editor.apply()
                 progressBar.visibility = View.GONE
-                val intentStart = Intent(requireContext(),start::class.java)
+                val intentStart = Intent(requireContext(), start::class.java)
                 startActivity(intentStart)
 
             }
@@ -98,29 +103,29 @@ class Profile : Fragment() {
         return view
     }
 
+
     private fun loadRecipes() {
-        firestore.collection("Recipes")
-            .get()
-            .addOnSuccessListener { querySnapshot ->
-                val recipes = ArrayList<RecipeOwn>()
-                for (document in querySnapshot.documents) {
-                    val recipeData = document.data
-                    if (recipeData?.get("userId") as String == userId) {
-                        // Safely extract recipe data and handle null values
-                        val recipe = RecipeOwn(
-                            recipeData?.get("title") as? String ?: "",
-                            recipeData?.get("type") as? String ?: "",
-                            recipeData?.get("imageUrl") as? String ?: "",
-                            recipeData?.get("date") as? String ?: ""
-                        )
-                        recipes.add(recipe)
-                    }
+        val baseUrl = "http://10.0.2.2:8080/"
+        val apiService = RetrofitClient.getClient(baseUrl)
+
+        apiService.getUserRecipes(userId).enqueue(object : Callback<RecipesResponse> {
+            override fun onResponse(call: Call<RecipesResponse>, response: Response<RecipesResponse>) {
+                if (response.isSuccessful) {
+                    val recipesResponse = response.body()
+                    val recipes = recipesResponse?.data ?: emptyList()
                     recipeAdapter.setRecipeList(recipes)
+                    progressBar.visibility = View.GONE
+                } else {
+                    Log.e(TAG, "Failed to fetch recipes: ${response.message()}")
+                    progressBar.visibility = View.GONE
                 }
             }
-            .addOnFailureListener { exception ->
-                // Handle any errors
-                Log.e(ContentValues.TAG, "Error fetching recipes: ", exception)
+
+            override fun onFailure(call: Call<RecipesResponse>, t: Throwable) {
+                Log.e(TAG, "Error fetching recipes", t)
+                progressBar.visibility = View.GONE
             }
+        })
     }
+
 }

@@ -37,6 +37,9 @@ android {
 }
 
 dependencies {
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("com.theartofdev.edmodo:android-image-cropper:2.8.0")
     implementation("com.github.bumptech.glide:glide:4.13.2")

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".RecipeDetails">
+    tools:context=".common.RecipeDetails">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -191,6 +191,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/epilogue"
             android:paddingVertical="5dp"
+            android:lineSpacingExtra="@dimen/_5sdp"
             android:hint="Ingredients"
             android:paddingHorizontal="@dimen/_26sdp"
             android:textColor="@color/white"
@@ -209,6 +210,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/epilogue"
             android:hint="Steps"
+            android:lineSpacingExtra="@dimen/_5sdp"
             android:paddingHorizontal="@dimen/_26sdp"
             android:textColor="@color/white"
             android:paddingVertical="5dp"

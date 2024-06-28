@@ -1,4 +1,4 @@
-package com.example.recipesharingappxml
+package com.example.recipesharingappxml.auth
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.airbnb.lottie.LottieAnimationView
+import com.example.recipesharingappxml.MainActivity
+import com.example.recipesharingappxml.R
 
 class splash : AppCompatActivity() {
 
@@ -16,8 +18,8 @@ class splash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         uploadAnimation = findViewById(R.id.loadingAnimation)
         uploadAnimation.playAnimation()
-        val intentStart = Intent(this,start::class.java)
-        val intentMain = Intent(this,MainActivity::class.java)
+        val intentStart = Intent(this, start::class.java)
+        val intentMain = Intent(this, MainActivity::class.java)
 
         val pref: SharedPreferences = getSharedPreferences("login", AppCompatActivity.MODE_PRIVATE)
         val flag : Boolean = pref.getBoolean("flag",false)
