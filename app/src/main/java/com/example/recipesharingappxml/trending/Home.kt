@@ -98,7 +98,7 @@ class Home : Fragment(), RecipeTrendAdapter.OnRecipeClickListener {
         return view
     }
     private fun loadRecipesAll() {
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val apiService = RetrofitClient.getClient(baseUrl)
 
         apiService.getAllTime().enqueue(object : Callback<RecipesResponse> {
@@ -123,7 +123,7 @@ class Home : Fragment(), RecipeTrendAdapter.OnRecipeClickListener {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun loadRecipesToday() {
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val apiService = RetrofitClient.getClient(baseUrl)
 
         apiService.getByDate(formattedDateStr).enqueue(object : Callback<RecipesResponse> {
@@ -148,7 +148,7 @@ class Home : Fragment(), RecipeTrendAdapter.OnRecipeClickListener {
 
     private fun loadRecipesMonth() {
         val currentMonth = getCurrentMonth()
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val apiService = RetrofitClient.getClient(baseUrl)
 
         apiService.getByMonth(currentMonth.toString()).enqueue(object : Callback<RecipesResponse> {
@@ -172,7 +172,7 @@ class Home : Fragment(), RecipeTrendAdapter.OnRecipeClickListener {
     }
 
     private fun loadRecipesWeek() {
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val apiService = RetrofitClient.getClient(baseUrl)
 
         apiService.getByWeek(formattedDateStr).enqueue(object : Callback<RecipesResponse> {

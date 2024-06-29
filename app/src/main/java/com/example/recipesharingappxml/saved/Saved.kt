@@ -60,7 +60,7 @@ class Saved : Fragment(), RecipeAdapter.OnRecipeClickListener {
         val pref: SharedPreferences = requireContext().getSharedPreferences("login", MODE_PRIVATE)
         val uid = pref.getString("email", "") ?: ""
 
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val apiService = RetrofitClient.getClient(baseUrl)
 
         apiService.getSavedRecipes(uid).enqueue(object : Callback<RecipesResponse> {

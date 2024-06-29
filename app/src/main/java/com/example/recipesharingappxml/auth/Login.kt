@@ -73,7 +73,7 @@ class Login : AppCompatActivity() {
             return
         }
 
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val loginRequest = LoginRequest(emailText, passText)
         Log.d("Login", "Request Body: $loginRequest")
         val apiService = RetrofitClient.getClient(baseUrl)

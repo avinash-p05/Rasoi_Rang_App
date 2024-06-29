@@ -49,7 +49,7 @@ class Feed : Fragment(), RecipeAdapter.OnRecipeClickListener {
 
     // Function to load recipes from backend API
     private fun loadRecipes() {
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val apiService = RetrofitClient.getClient(baseUrl)
 
         apiService.getAllRecipes().enqueue(object : Callback<RecipesResponse> {

@@ -2,8 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.RecipeSharingAppxml" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
-
-
+        <item name="android:statusBarColor">@color/textfield</item>
     </style>
 
     <style name="Theme.RecipeSharingAppxml" parent="Base.Theme.RecipeSharingAppxml" />

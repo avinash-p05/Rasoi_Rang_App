@@ -91,7 +91,7 @@ class Register : AppCompatActivity() {
         }
 
         progressBar.visibility = View.VISIBLE
-        val baseUrl = "http://10.0.2.2:8080/"
+        val baseUrl = "https://recipe-sharing-backend.onrender.com/"
         val registerRequest = RegisterRequest(emailText, usernameText, passText)
         Log.d("Register", "Request Body: $registerRequest")
         val apiService = RetrofitClient.getClient(baseUrl)

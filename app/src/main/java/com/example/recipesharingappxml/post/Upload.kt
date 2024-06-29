@@ -199,7 +199,7 @@ class Upload : Fragment() {
             // Image uploaded successfully, get download URL
             storageReference.downloadUrl.addOnSuccessListener { uri ->
                 // Now, use Retrofit to send recipe data with image URL to MongoDB
-                val baseUrl = "http://10.0.2.2:8080/"
+                val baseUrl = "https://recipe-sharing-backend.onrender.com/"
                 val recipeRequest = UploadRequest(
                     titleText,
                     selectedItem,
